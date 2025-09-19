@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo do Amor ❤️</title>
+
+    <!-- Preload das imagens -->
+    <link rel="preload" href="https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png" as="image">
+    <link rel="preload" href="https://i.imgur.com/xNhzvoq.png" as="image">
+    <link rel="preload" href="https://i.imgur.com/P0R8uS2.png" as="image">
+
+    <!-- Meta tags -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Um universo de amor criado especialmente">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style-fixed.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: white;
+        font-family: 'Dancing Script', cursive;
+        transition: opacity 1s ease-out;
+    ">
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: pulse 2s ease-in-out infinite;">💖</div>
+        <div style="font-size: 1.8rem;">Preparando a magia...</div>
+    </div>
+
+    <!-- Fundo Cósmico -->
+    <div class="cosmic-bg">
+        <div class="stars-layer"></div>
+        <div class="nebula-effect"></div>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="universe-container">
+        <!-- Título -->
+        <h1 class="epic-title">Eu te amo emy. <3</h1>
+
+        <!-- Olhos Mágicos -->
+        <div class="soul-mirror">
+            <div class="eye-sphere" title="Clique para ver a magia">
+                <img src="https://i.imgur.com/xNhzvoq.png" alt="Olhos da Alma" class="eye-image" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Coração Central -->
+        <div class="heart-sanctuary">
+            <!-- Partículas Orbitais -->
+            <div class="orbital-system">
+                <div class="orbit orbit-1">
+                    <div class="orbital-particle particle-1"></div>
+                </div>
+                <div class="orbit orbit-2">
+                    <div class="orbital-particle particle-2"></div>
+                    <div class="orbital-particle particle-3"></div>
+                </div>
+            </div>
+
+            <!-- Coração Principal -->
+            <img src="https://png.pngtree.com/png-vector/20220428/ourmid/pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png" 
+                 alt="Coração do Amor" 
+                 class="premium-heart"
+                 onclick="revealLove()"
+                 loading="lazy"
+                 title="Clique para revelar a mensagem do coração">
+        </div>
+
+        <!-- Instruções -->
+        <div style="
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            font-family: 'Poppins', sans-serif;
+        ">
+             Toque no coração.<br>
+            <small style="opacity: 0.6;">Pressione ESPAÇO ou clique nos olhos para mais magia</small>
+        </div>
+    </div>
+
+    <!-- Modal da Mensagem -->
+    <div class="divine-revelation">
+        <div class="love-temple">
+            <div class="divine-text">
+                "Eu a amo, você é mais linda que qualquer arte já criada, a sua luz me ilumina por todo o universo e eu tenho olhos somente a você, você é minha paz e minha luz."
+            </div>
+            <button class="divine-button" onclick="closeLoveMessage()">
+                ✨ Guardar no Coração ✨
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script-fixed.js"></script>
+
+    <!-- Script de Loading -->
+    <script>
+        // Animação de loading
+        const loadingStyle = document.createElement('style');
+        loadingStyle.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.1); opacity: 0.8; }
+            }
+        `;
+        document.head.appendChild(loadingStyle);
+
+        // Remover tela de loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loading = document.getElementById('loadingScreen');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(function() {
+                        loading.style.display = 'none';
+                    }, 1000);
+                }
+            }, 2000);
+        });
+
+        // Fallback para remover loading se demorar muito
+        setTimeout(function() {
+            const loading = document.getElementById('loadingScreen');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+        }, 8000);
+
+        // Tratamento de erros
+        window.addEventListener('error', function(e) {
+            console.log('Erro capturado:', e.message);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+/* === RESET E CONFIGURAÇÕES BÁSICAS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* === FUNDO CÓSMICO === */
+.cosmic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, #1e3c72 0%, #2a5298 50%, #000428 100%);
+    z-index: 1;
+}
+
+.stars-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: starsMove 30s linear infinite;
+}
+
+@keyframes starsMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+.nebula-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+    animation: nebulaFloat 20s ease-in-out infinite;
+}
+
+@keyframes nebulaFloat {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* === CONTAINER PRINCIPAL === */
+.universe-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+/* === TÍTULO === */
+.epic-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    background: linear-gradient(45deg, #ffd700, #ff6b9d, #c44569);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientMove 3s ease-in-out infinite;
+    text-align: center;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* === OLHOS === */
+.soul-mirror {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 2rem 0;
+}
+
+.eye-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.eye-sphere::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ffd700, #ff6b9d, #c44569, #764ba2);
+    animation: rotate 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.eye-sphere:hover {
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.eye-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease;
+    border-radius: 50%;
+}
+
+.eye-image.transitioning {
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+/* === CORAÇÃO === */
+.heart-sanctuary {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.premium-heart {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: heartBeat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.6));
+}
+
+@keyframes heartBeat {
+    0%, 100% { 
+        transform: scale(1);
+    }
+    50% { 
+        transform: scale(1.05);
+    }
+}
+
+.premium-heart:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.8));
+}
+
+/* === PARTÍCULAS ORBITAIS === */
+.orbital-system {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: orbitSpin 10s linear infinite;
+}
+
+.orbit-1 { 
+    width: 120px; 
+    height: 120px; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.orbit-2 { 
+    width: 180px; 
+    height: 180px; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    animation-duration: 15s;
+    animation-direction: reverse;
+}
+
+@keyframes orbitSpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbital-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ffd700;
+}
+
+.particle-1 { top: 0; left: 50%; transform: translateX(-50%); }
+.particle-2 { top: 50%; right: 0; transform: translateY(-50%); }
+.particle-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.particle-4 { top: 50%; left: 0; transform: translateY(-50%); }
+
+/* === MODAL === */
+.divine-revelation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.divine-revelation.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.love-temple {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.divine-revelation.active .love-temple {
+    transform: scale(1);
+}
+
+.divine-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.divine-button {
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.divine-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 157, 0.4);
+}
+
+/* === EFEITOS DE PARTÍCULAS === */
+.floating-love {
+    position: absolute;
+    color: #ff6b9d;
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatUp 4s ease-out forwards;
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
+    100% {
+        transform: translateY(-100vh) scale(0);
+        opacity: 0;
+    }
+}
+
+.magic-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFade 2s ease-out forwards;
+}
+
+@keyframes particleFade {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    .epic-title { 
+        font-size: 3rem; 
+    }
+
+    .soul-mirror { 
+        width: 140px; 
+        height: 140px; 
+    }
+
+    .premium-heart { 
+        width: 80px; 
+    }
+
+    .love-temple { 
+        padding: 2rem 1.5rem; 
+        margin: 20px; 
+    }
+
+    .divine-text { 
+        font-size: 1.6rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .epic-title { 
+        font-size: 2.5rem; 
+    }
+
+    .soul-mirror { 
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .premium-heart { 
+        width: 70px; 
+    }
+
+    .love-temple { 
+        padding: 1.5rem 1rem; 
+    }
+
+    .divine-text { 
+        font-size: 1.4rem; 
+    }
+}
